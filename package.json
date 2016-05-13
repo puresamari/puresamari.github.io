@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "watch": "webpack --watch",
+    "dev": "webpack-dev-server --content-base --inline",
     "build": "webpack --config ./webpack.production.config.js"
   },
   "devDependencies": {
@@ -24,6 +25,7 @@
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1",
     "zone.js": "^0.6.12"
   },
   "repository": {
