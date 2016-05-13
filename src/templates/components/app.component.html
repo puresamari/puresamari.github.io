@@ -1,6 +1,6 @@
 <nav>
     <ul>
-        <li *ngFor='#item of menuItems'>
+        <li *ngFor='let item of menuItems'>
             <a [routerLink]="[item]">{{item}}</a>
         </li>
     </ul>

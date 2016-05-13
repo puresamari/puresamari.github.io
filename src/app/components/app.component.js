@@ -1,22 +1,23 @@
 import 'style/components/app.component.scss';
-import template from 'templates/components/app.component.html';
+import template         from 'templates/components/app.component.html';
 
-import { Component }from 'angular2/core';
-import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
+import { Component }    from 'angular2/core';
+import { RouteConfig, ROUTER_DIRECTIVES } 
+                        from 'angular2/router';
 
-import { Landing }from './views/landing.view.component';
+import { Landing }      from './views/landing.view.component';
 
-import { ApiTesting }from './views/api-testing.view.component';
-import { Test }from './views/test.view.component';
-import { Overview }from './views/overview.view.component';
-import { Tools }from './views/tools.view.component';
+import { ApiTesting }   from './views/api-testing.view.component';
+import { Test }         from './views/test.view.component';
+import { Overview }     from './views/overview.view.component';
+import { Tools }        from './views/tools.view.component';
 
 const DIRECTIVES = [ Landing, ApiTesting, Test, Overview, Tools ];
 
 @Component({
     selector: 'app',
     template: template,
-    directives: [ ROUTER_DIRECTIVES, DIRECTIVES ]
+    directives: [ ROUTER_DIRECTIVES, DIRECTIVES ],
 })
 @RouteConfig([
     
