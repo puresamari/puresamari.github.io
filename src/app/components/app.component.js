@@ -15,6 +15,7 @@ const DIRECTIVES = [Hero];
 })
 export class AppComponent {
     constructor(titleService) {
+        console.log('test');
         this.titleService = titleService;
     }
 
