@@ -1,13 +1,8 @@
-import 'zone.js';
 import 'reflect-metadata';
+import 'zone.js';
 
-import {Component} from 'angular2/core';
-import {bootstrap} from 'angular2/platform/browser';
+import { bootstrap, Title } from 'angular2/platform/browser';
 
-@Component({
-  selector: 'my-app',
-  template: '<h1>Hello world from angular!!!</h1>'
-})
-export class AppComponent { }
+import { AppComponent } from './components/app.component';
 
-bootstrap(AppComponent);
+bootstrap(AppComponent, [ Title ]);
