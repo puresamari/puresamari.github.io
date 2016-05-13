@@ -8,7 +8,7 @@ module.exports = {
     entry: './app/main.js',
     output: {
         path: path.join(__dirname, 'dist'),
-        publicPath: "/dist/",
+        publicPath: '/dist/',
         filename: 'app.js'
     },
     module: {
@@ -23,11 +23,11 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loaders: ["style", "css", "sass"]
+                loaders: [ 'style', 'css', 'sass' ]
             },
             {
                test: /\.html$/,
-               loader: "raw-loader"
+               loader: 'raw-loader'
             }
         ]
     },
@@ -40,7 +40,7 @@ module.exports = {
     stats: {
         colors: true
     },
-    devtool: "#inline-source-map",
+    devtool: '#inline-source-map',
     resolve: {
         extensions: ['', '.js', '.scss', '.html'],
         root: [appDir]

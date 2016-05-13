@@ -1,5 +1,3 @@
-import './app.component.scss';
-
 import { Component }    from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES } 
                         from 'angular2/router';
@@ -17,6 +15,7 @@ const DIRECTIVES = [ Landing, ApiTesting, Test, Overview, Tools ];
     selector: 'app',
     template: require('app.component.html'),
     directives: [ ROUTER_DIRECTIVES, DIRECTIVES ],
+    styles: [ require('app.component.scss').toString() ]
 })
 @RouteConfig([
     
