@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "watch": "webpack --watch",
-    "dev": "webpack-dev-server  --iframe",
+    "dev": "webpack-dev-server --content-base --inline",
     "build": "webpack"
   },
   "devDependencies": {

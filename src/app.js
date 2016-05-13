@@ -3,8 +3,10 @@ import 'style/base.scss'
 import 'reflect-metadata';
 import 'zone.js';
 
-import { bootstrap, Title } from 'angular2/platform/browser';
+import { bootstrap } from 'angular2/platform/browser';
+//import { LocationStrategy, PathLocationStrategry } from 'angular2/router';
+import {ROUTER_PROVIDERS} from 'angular2/router';
 
 import { AppComponent } from './app/components/app.component';
 
-bootstrap(AppComponent, [ Title ]);
+bootstrap(AppComponent, [ ROUTER_PROVIDERS ]);

@@ -42,5 +42,9 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.scss', '.html'],
         root: [path.join(__dirname, './src')]
+    },
+    devServer: {
+        port: 8080,
+        historyApiFallback: true
     }
 };
