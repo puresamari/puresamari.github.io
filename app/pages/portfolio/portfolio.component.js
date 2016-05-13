@@ -4,4 +4,4 @@ import {Component} from 'angular2/core';
     selector: 'portfolio',
     template: require('../default.component.html')
 })
-export class Portfolio { constructor() { this.title = 'Tools' } }
+export class Portfolio { constructor() { this.title = 'Portfolio' } }

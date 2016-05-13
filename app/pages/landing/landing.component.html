@@ -1,17 +1,6 @@
 <ul>
-    <li>
-        <tools></tools>
-    </li>
-    <li>
-        <api-testing></api-testing>
-    </li>
-    <li>
-        <overview></overview>
-    </li>
-    <li>
-        <test></test>
+    <li *ngFor='let item of menuItems'>
+        <a [routerLink]="[item]">{{item}}</a>
     </li>
 </ul>
-
-
-asdf
+<router-outlet></router-outlet>
