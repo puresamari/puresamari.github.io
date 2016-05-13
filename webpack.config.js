@@ -22,12 +22,16 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loaders: ["style", "css", "sass"]
+            },
+            {
+               test: /\.html$/,
+               loader: "raw-loader"
             }
         ]
     },
-      sassLoader: {
+    sassLoader: {
         includePaths: [path.resolve(__dirname, "./src")]
-      },
+    },
     plugins: [
         new webpack.NoErrorsPlugin(),
     ],
@@ -36,7 +40,7 @@ module.exports = {
     },
     devtool: 'source-map',
     resolve: {
-        extensions: ['', '.js', '.scss'],
+        extensions: ['', '.js', '.scss', '.html'],
         root: [path.join(__dirname, './src')]
     }
 };
