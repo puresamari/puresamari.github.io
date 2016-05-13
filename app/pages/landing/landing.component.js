@@ -1,11 +1,10 @@
-import 'style/components/hero.component.scss';
-import template from 'templates/components/views/landing.view.component.html';
+import './landing.component.scss';
 
 import {Component} from 'angular2/core';
 
 @Component({
     selector: 'landing',
-    template: template
+    template: require('./landing.component.html'),
 })
 export class Landing {
     constructor() {

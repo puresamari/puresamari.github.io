@@ -1,9 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
+
 var nodeModulesDir = path.resolve(__dirname, './node_modules');
+var appDir = path.resolve(__dirname, './app');
 
 module.exports = {
-    entry: './src/app.js',
+    entry: './app/main.js',
     output: {
         path: path.join(__dirname, 'dist'),
         publicPath: "/dist/",
@@ -30,7 +32,7 @@ module.exports = {
         ]
     },
     sassLoader: {
-        includePaths: [path.resolve(__dirname, "./src")]
+        includePaths: [appDir]
     },
     plugins: [
         new webpack.NoErrorsPlugin(),
@@ -38,13 +40,13 @@ module.exports = {
     stats: {
         colors: true
     },
-    devtool: 'source-map',
+    devtool: "#inline-source-map",
     resolve: {
         extensions: ['', '.js', '.scss', '.html'],
-        root: [path.join(__dirname, './src')]
+        root: [appDir]
     },
     devServer: {
         port: 8080,
-        historyApiFallback: true
+        historyApiFallback: true,
     }
 };

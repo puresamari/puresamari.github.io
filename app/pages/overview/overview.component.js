@@ -1,8 +1,7 @@
-import template from 'templates/components/views/default.view.component.html';
 import {Component} from 'angular2/core';
 
 @Component({
     selector: 'overview',
-    template: template
+    template: require('../default.component.html')
 })
 export class Overview { constructor() { this.title = 'Overview' } }
