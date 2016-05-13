@@ -29,7 +29,6 @@ module.exports = {
       },
     plugins: [
         new webpack.NoErrorsPlugin(),
-//        new ExtractTextPlugin('[name].css')
     ],
     stats: {
         colors: true

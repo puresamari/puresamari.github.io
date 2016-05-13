@@ -1,3 +1,5 @@
+import 'style/components/app.component.scss';
+
 import { Component }from 'angular2/core';
 
 import { Hero }from './hero.component';
