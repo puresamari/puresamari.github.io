@@ -1,11 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
-
 var nodeModulesDir = path.resolve(__dirname, './node_modules');
 
-
 module.exports = {
-    entry: './src/app/app.js',
+    entry: './src/app.js',
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'app.js'
@@ -17,17 +15,28 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 loaders: ['babel-loader'],
                 externals: {
-                    angular2 : ['/node_modules/angular2/es6/prod']
-                },
+                    angular2: ['/node_modules/angular2/es6/prod']
+                }
+            },
+            {
+                test: /\.scss$/,
+                loaders: ["style", "css", "sass"]
             }
         ]
     },
-    extensions: ['', '.js'],
+      sassLoader: {
+        includePaths: [path.resolve(__dirname, "./src")]
+      },
     plugins: [
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+//        new ExtractTextPlugin('[name].css')
     ],
     stats: {
         colors: true
     },
-    devtool: 'source-map'
+    devtool: 'source-map',
+    resolve: {
+        extensions: ['', '.js', '.scss'],
+        root: [path.join(__dirname, './src')]
+    }
 };
