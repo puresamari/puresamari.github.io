@@ -4,12 +4,12 @@ import { RouteConfig, ROUTER_DIRECTIVES }
 
 import { Landing }      from './pages/landing/landing.component';
 
-import { ApiTesting }   from './pages/api-testing/api-testing.component';
-import { Test }         from './pages/test/test.component';
+import { Feed }         from './pages/feed/feed.component';
+import { Stuff }        from './pages/stuff/stuff.component';
 import { Overview }     from './pages/overview/overview.component';
-import { Tools }        from './pages/tools/tools.component';
+import { Portfolio }    from './pages/portfolio/portfolio.component';
 
-const DIRECTIVES = [ Landing, ApiTesting, Test, Overview, Tools ];
+const DIRECTIVES = [ Landing, Feed, Stuff, Overview, Portfolio ];
 
 @Component({
     selector: 'app',
@@ -19,15 +19,15 @@ const DIRECTIVES = [ Landing, ApiTesting, Test, Overview, Tools ];
 })
 @RouteConfig([
     
-    { path: '/test', component: Test, name: 'Test' },
-    { path: '/api-testing', component: ApiTesting, name: 'ApiTesting' },
+    { path: '/stuff', component: Stuff, name: 'Stuff' },
+    { path: '/feed', component: Feed, name: 'Feed' },
     { path: '/overview', component: Overview, name: 'Overview' },
-    { path: '/tools', component: Tools, name: 'Tools' },
+    { path: '/portfolio', component: Portfolio, name: 'Portfolio' },
     
     { path: '/**', component: Landing, name: 'Landing', useAsDefault: true },
 ])
 export class AppComponent {
     constructor() {
-        this.menuItems = [ 'Landing', 'ApiTesting', 'Test', 'Overview', 'Tools' ];
+        this.menuItems = [ 'Landing', 'Feed', 'Stuff', 'Overview', 'Portfolio' ];
     }
 }

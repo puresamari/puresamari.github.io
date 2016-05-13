@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 
 @Component({
-    selector: 'tools',
+    selector: 'feed',
     template: require('../default.component.html')
 })
-export class Tools { constructor() { this.title = 'Tools' } }
+export class Feed { constructor() { this.title = 'Api Testing' } }

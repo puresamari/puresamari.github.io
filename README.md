@@ -9,3 +9,10 @@ My website for now
 4. navigate to [localhost:8080][devlink]
 
 [devlink]: http://localhost:8080/ "Development enviroment"
+
+# Sitemap
+
+- feed
+- landing
+- portfolio
+- stuff
