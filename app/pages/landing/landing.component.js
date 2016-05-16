@@ -2,7 +2,7 @@ import {Component}      from 'angular2/core';
 
 @Component({
     selector: 'landing',
-    template: require('./landing.component.html'),
+    templateUrl: '/app/pages/landing/landing.component.html',
     styles: [ require('./landing.component.scss').toString() ],
 })
 export class Landing { }

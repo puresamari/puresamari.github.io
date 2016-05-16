@@ -8,16 +8,15 @@ import { Feed }         from './pages/feed/feed.component';
 import { Stuff }        from './pages/stuff/stuff.component';
 import { Overview }     from './pages/overview/overview.component';
 import { Portfolio }    from './pages/portfolio/portfolio.component';
-import { PageHolder }   from './components/pageholder/pageholder.component';
 
 
-const DIRECTIVES = [ Landing, Feed, Stuff, Overview, Portfolio, PageHolder ];
+const DIRECTIVES = [ Landing, Feed, Stuff, Overview, Portfolio ];
 
 @Component({
-    selector: 'app',
-    template: require('./app.component.html'),
+    selector: '[app]',
+    templateUrl: '/app/app.component.html',
     directives: [ ROUTER_DIRECTIVES, DIRECTIVES ],
-    styles: [ require('app.component.scss').toString() ],
+    styles: [ require('./app.component.scss').toString() ],
 })
 @RouteConfig([
     { path: '/', component: Landing, name: 'Landing', useAsDefault: true },
@@ -29,8 +28,5 @@ const DIRECTIVES = [ Landing, Feed, Stuff, Overview, Portfolio, PageHolder ];
 export class AppComponent {
     constructor() {
         this.menuItems = [ 'Feed', 'Stuff', 'Overview', 'Portfolio' ];
-//        this.router.changes.subscribe(() => {
-//            console.log('test');
-//        });
     }
 }

@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+@import './variables';
 
-body {
+html {
+    font-size: 30px;
     background: #212121;
     color: #ef9a9a;
     font-family: 'Roboto', sans-serif;
