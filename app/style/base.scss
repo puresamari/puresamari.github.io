@@ -23,13 +23,17 @@ a {
         display: inline-block;
         width: 20%;
         height: 1px;
-        background-color: map-get($colors, primary);;
+        background-color: map-get($colors, accent);
         @include transition($easing_cubic);
     }
     &:hover:after {
         width: 100%;
     }
     &:active:after {
-        width: 120%;
+        width: 80%;
     }
+}
+
+[href] {
+    cursor: pointer;
 }

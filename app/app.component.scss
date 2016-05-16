@@ -11,6 +11,14 @@
         padding: 1rem;
         z-index: 1;
         font-size: 1em;
+        
+        i {
+            @include position(absolute, 50% null null 50%);
+            @include transform(translate(-50%,-50%));
+            font-size: 3em;
+            color: map-get($colors, primary);
+        }
+        
         .open-page {
             position: absolute;
             @include transform-origin(center);
