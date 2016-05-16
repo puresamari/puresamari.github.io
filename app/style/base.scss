@@ -1,10 +1,35 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:700italic,700,500italic,500,400italic,400,300italic,300,100italic,100);
 @import './variables';
-@import 'bourbon';
 
 html {
     font-size: 30px;
-    background: #212121;
-    color: #ef9a9a;
+    color: #212121;
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+body {
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    display: inline-block;
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 20%;
+        height: 1px;
+        background-color: map-get($colors, primary);;
+        @include transition($easing_cubic);
+    }
+    &:hover:after {
+        width: 100%;
+    }
+    &:active:after {
+        width: 120%;
+    }
 }

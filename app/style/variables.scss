@@ -1,3 +1,11 @@
 @import 'bourbon';
 
+$easing_cubic: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+
 $grid: 60px;
+
+$color_primary: #ff1744;
+
+$colors: (
+    primary: #ff1744
+);

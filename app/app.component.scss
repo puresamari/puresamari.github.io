@@ -6,14 +6,45 @@
     > nav {
         @include position(absolute, 50% null null 50%);
         @include transform(translate(-50%,-50%));
+        @include size(10rem 5rem);
         background: #fff;
         padding: 1rem;
         z-index: 1;
         font-size: 1em;
         .open-page {
             position: absolute;
+            @include transform-origin(center);
+
+            //- feed      - top
+            //- stuff     - right
+            //- overview  - bottom
+            //- portfolio - left
+            
+            &-feed,
+            &-overview {
+                left: 50%;
+            }
+            &-portfolio,
+            &-stuff {
+                top: 50%;
+            }
+            
             &-feed {
+                @include transform(translate(-50%,-50%));
+                top: 0;
+            }
+            &-overview {
+                @include transform(translate(-50%,50%));
+                bottom: 0;
+            }
+            
+            &-stuff {
+                @include transform(translate(50%,-50%));
                 right: 0;
+            }
+            &-portfolio {
+                @include transform(translate(-50%,-50%));
+                left: 0;
             }
         }
     }
