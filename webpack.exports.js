@@ -32,7 +32,7 @@ module.exports = {
         ]
     },
     sassLoader: {
-        includePaths: [appDir]
+        includePaths: [appDir, path.resolve(nodeModulesDir, 'bourbon/app/assets/stylesheets/')]
     },
     plugins: [
         new webpack.NoErrorsPlugin(),

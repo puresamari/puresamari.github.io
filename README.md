@@ -12,7 +12,9 @@ My website for now
 
 # Sitemap
 
-- feed
 - landing
-- portfolio
-- stuff
+
+- feed      - top
+- stuff     - right
+- overview  - bottom
+- portfolio - left
