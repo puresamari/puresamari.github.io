@@ -4,7 +4,13 @@ import { RouteConfig, ROUTER_DIRECTIVES }
 
 import { Landing }      from './pages/landing/landing.component';
 
-const DIRECTIVES = [ Landing ];
+import { Feed }         from './pages/feed/feed.component';
+import { Stuff }        from './pages/stuff/stuff.component';
+import { Overview }     from './pages/overview/overview.component';
+import { Portfolio }    from './pages/portfolio/portfolio.component';
+
+
+const DIRECTIVES = [ Landing, Feed, Stuff, Overview, Portfolio ];
 
 @Component({
     selector: 'app',
@@ -13,7 +19,11 @@ const DIRECTIVES = [ Landing ];
     styles: [ require('app.component.scss').toString() ]
 })
 @RouteConfig([
-    { path: '/...', component: Landing, name: 'Landing', useAsDefault: true },
+    { path: '/landing', component: Landing, name: 'Landing', useAsDefault: true },
+    { path: '/stuff', component: Stuff, name: 'Stuff' },
+    { path: '/feed', component: Feed, name: 'Feed' },
+    { path: '/overview', component: Overview, name: 'Overview'},
+    { path: '/portfolio', component: Portfolio, name: 'Portfolio' },
 ])
 export class AppComponent {
     constructor() {
