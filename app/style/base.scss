@@ -18,13 +18,24 @@ a {
     color: inherit;
     text-align: center;
     display: inline-block;
+    position: relative;
+    &:before,
     &:after {
         content: '';
-        display: inline-block;
-        width: 20%;
-        height: 1px;
-        background-color: map-get($colors, accent);
         @include transition($easing_cubic);
+        @include transform(translate(-50%));
+        position: absolute;
+        bottom: 0px;
+        height: 1px;
+        left: 50%;
+    }
+    &:before {
+        width: 100%;
+        background-color: #9E9E9E;
+    }
+    &:after {
+        width: 20%;
+        background-color: map-get($colors, accent);
     }
     &:hover:after {
         width: 100%;

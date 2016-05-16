@@ -14,7 +14,7 @@
         i, a {
             @include padding(null .5rem);
             @include transition($easing_cubic);
-            display: inline-block;
+            display: inline;
             vertical-align: middle;
         }
         &.show-not {
@@ -23,11 +23,15 @@
             background-color: map-get($colors, primary);
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
+            @include padding(null 1rem);
             i, a {
                 color: #fff;
             }
             i {
                 font-size: 2rem;
+            }
+            a:before {
+                background-color: #fff;
             }
         }
         &.show {
@@ -50,11 +54,6 @@
             .open-page {
                 position: absolute;
                 @include transform-origin(center);
-
-                //- feed      - top
-                //- stuff     - right
-                //- overview  - bottom
-                //- Me - left
 
                 &-feed,
                 &-overview {
