@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 
 @Component({
-    selector: 'portfolio',
+    selector: 'me',
     templateUrl: '/app/pages/default.component.html',
 })
-export class Portfolio { constructor() { this.title = 'Portfolio' } }
+export class Me { constructor() { this.title = 'Me' } }

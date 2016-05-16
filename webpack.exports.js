@@ -9,7 +9,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         publicPath: '/dist/',
-        filename: 'app.js'
+        filename: 'app.min.js'
     },
     module: {
         loaders: [
@@ -48,7 +48,7 @@ module.exports = {
     devServer: {
         port: 8080,
         historyApiFallback: {
-          index: '/index.dev.html'
+          index: '/index.html'
         }
     }
 }

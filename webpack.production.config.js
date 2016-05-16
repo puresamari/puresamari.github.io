@@ -14,6 +14,4 @@ exports.plugins = [
 
 exports.devtool = 'source-map';
 
-exports.output.filename = 'app.min.js';
-
 module.exports = exports;

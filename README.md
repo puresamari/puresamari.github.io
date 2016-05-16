@@ -17,4 +17,4 @@ My website for now
 - feed      - top
 - stuff     - right
 - overview  - bottom
-- portfolio - left
+- Me - left
