@@ -2,4 +2,5 @@
     <i class="material-icons">more_vert</i>
     <a [routerLink]="['/Landing']">Landingpage</a>
 </nav>
+<div page-holder *ngFor='let item of menuItems' [page]="item"></div>
 <router-outlet></router-outlet>
