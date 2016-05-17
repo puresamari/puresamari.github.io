@@ -4,26 +4,19 @@
     @include size(100%);
     overflow: hidden;
     z-index: 0;
-    > router-outlet + * {
-        @include transition($easing_cubic);
-    }
-    > router-outlet {
-        + * {
-            @include position(absolute, null 0 null);
+    > router-outlet + {
+        * {
+            @include position(absolute, 0 null null 0);
             @include transition($easing_cubic);
             @include size(100%);
             padding: 2rem;
-            background-color: map-get($colors, light_gray);
             overflow: auto;
             box-sizing: border-box;
+            padding: 4rem 2rem 2rem;
         }
-        &.show + * {
-            opacity: 1;
-            top: 0;
-        }
-        &.show-not + * {
+        landing {
             opacity: 0;
-            top: 100%;
+            left: 100%;
         }
     }
 }
