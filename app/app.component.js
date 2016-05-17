@@ -44,10 +44,17 @@ export class AppComponent {
         this.loading = true;
         
         var _this = this;
-        _this.routeChangeEvent = new CustomEvent("name-of-event", { "detail": "Example of an event" });
         
         this.Router.subscribe(val => {
-            document.dispatchEvent(_this.routeChangeEvent);
+            
+            var routesDetails = {
+                'previous': _this.activeRoute,
+                'current': val
+            };
+            
+            var routeChangeEvent = new CustomEvent('route-change', { 'detail': routesDetails });
+            document.dispatchEvent(routeChangeEvent);
+            
             _this.activeRoute = val, _this.loading = true;
             setTimeout(() => { _this.loading = false; }, 1000)
         })

@@ -10,12 +10,15 @@ import { ROUTER_DIRECTIVES }    from 'angular2/router';
 })
 export class Menu {
     constructor(renderer, el) {
-        renderer.setElementClass(el.nativeElement, 'position-middle', true);
-        document.addEventListener('routeChange', this.setMenuPos);
+        this.renderer = renderer;
+        this.element = el;
+        var _this = this;
+        document.addEventListener('route-change', e => this.setNewMenuPos(e, _this.renderer, _this.element));
     }
     
-    setNewMenuPos(e) {
-        console.log(e);
+    setNewMenuPos(ev, r, e) {
+        r.setElementClass(e.nativeElement, 'position-'+ev.detail.previous, false);
+        r.setElementClass(e.nativeElement, 'position-'+ev.detail.current, true);
     }
     
     static get parameters() {
