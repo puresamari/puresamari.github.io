@@ -1,0 +1,78 @@
+@import './style/variables';
+nav {
+    @include transition($easing_cubic);
+    @include position(absolute, null null null 50%);
+    z-index: 1;
+    i, a {
+        @include padding(null .5rem);
+        @include transition($easing_cubic);
+        display: inline;
+        vertical-align: middle;
+    }
+    &.show-not {
+        top: 0;
+        @include transform(translate(-50%,0));
+        background-color: map-get($colors, primary);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        @include padding(null 1rem);
+        i, a {
+            color: #fff;
+        }
+        i {
+            font-size: 2rem;
+        }
+        a:before {
+            background-color: #fff;
+        }
+    }
+    &.show {
+        @include position(absolute, 50% null null 50%);
+        @include transform(translate(-50%,-50%));
+        @include size(10rem 5rem);
+        background-color: #fff;
+        padding: 1rem;
+        z-index: 1;
+        font-size: 1rem;
+        i {
+            @include position(absolute, 50% null null 50%);
+            @include transform(translate(-50%,-50%));
+            color: map-get($colors, primary);
+            font-size: 3rem;
+        }
+        a {
+            color: #212121;
+        }
+        .open-page {
+            position: absolute;
+            @include transform-origin(center);
+
+            &-feed,
+            &-overview {
+                left: 50%;
+            }
+            &-me,
+            &-stuff {
+                top: 50%;
+            }
+
+            &-feed {
+                @include transform(translate(-50%,-50%));
+                top: 0;
+            }
+            &-overview {
+                @include transform(translate(-50%,50%));
+                bottom: 0;
+            }
+
+            &-stuff {
+                @include transform(translate(50%,-50%));
+                right: 0;
+            }
+            &-me {
+                @include transform(translate(-50%,-50%));
+                left: 0;
+            }
+        }
+    }
+}

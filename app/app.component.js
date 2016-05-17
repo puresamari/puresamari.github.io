@@ -2,7 +2,12 @@ import { Component }    from 'angular2/core';
 import { Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } 
                         from 'angular2/router';
 
+// components
+
 import { Landing }      from './pages/landing/landing.component';
+import { Menu }           from './components/menu/menu.component';
+
+// pages
 
 import { Feed }         from './pages/feed/feed.component';
 import { Stuff }        from './pages/stuff/stuff.component';
@@ -10,13 +15,14 @@ import { Overview }     from './pages/overview/overview.component';
 import { Me }           from './pages/me/me.component';
 
 
-const DIRECTIVES = [ Landing, Feed, Stuff, Overview, Me ];
+const DIRECTIVES = [ Landing, Feed, Stuff, Overview, Me, Menu ];
+
 
 @Component({
     selector: '[app]',
     templateUrl: '/app/app.component.html',
     directives: [ ROUTER_DIRECTIVES, DIRECTIVES ],
-    providers: [ROUTER_PROVIDERS],
+    providers: [ ROUTER_PROVIDERS ],
     styles: [ require('./app.component.scss').toString() ],
 })
 @RouteConfig([
@@ -38,8 +44,10 @@ export class AppComponent {
         this.loading = true;
         
         var _this = this;
+        _this.routeChangeEvent = new CustomEvent("name-of-event", { "detail": "Example of an event" });
         
         this.Router.subscribe(val => {
+            document.dispatchEvent(_this.routeChangeEvent);
             _this.activeRoute = val, _this.loading = true;
             setTimeout(() => { _this.loading = false; }, 1000)
         })

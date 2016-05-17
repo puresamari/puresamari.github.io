@@ -1,0 +1,4 @@
+<nav [class]="'show' + (activeRoute == '' ? '' : '-not')">
+    <i class="material-icons" [routerLink]="['/Landing']">home</i>
+    <a *ngFor='let item of items' [class]="'open-page open-page-'+item.toLowerCase()" [routerLink]="[item]">{{item}}</a>
+</nav>
