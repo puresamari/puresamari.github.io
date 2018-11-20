@@ -37,11 +37,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include=".babelrc" />
     <Content Include=".browserslistrc" />
+    <Content Include=".editorconfig" />
     <Content Include=".gitignore" />
     <Content Include="libman.json" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
+    <Content Include=".travis.yml" />
     <Content Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>

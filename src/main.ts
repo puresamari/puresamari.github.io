@@ -1,5 +1,10 @@
-const canvas = document.createElement('canvas');
+import Canvas from './Canvas/index.ts';
 
+const canvas = new Canvas();
 
-
-console.log('asdf');
+canvas.CTX.fillRect(
+  canvas.Width / 4,
+  canvas.Height / 4,
+  canvas.Width / 2,
+  canvas.Height / 2
+);
