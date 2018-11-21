@@ -1,10 +1,13 @@
-import Canvas from './Canvas/index.ts';
+import Canvas from './Canvas';
+import Element from './Element';
+import elements from './Elements';
 
-const canvas = new Canvas();
+const wrapper = document.createElement('div');
+wrapper.setAttribute('id', 'canvas-wrapper');
 
-canvas.CTX.fillRect(
-  canvas.Width / 4,
-  canvas.Height / 4,
-  canvas.Width / 2,
-  canvas.Height / 2
-);
+document.body.appendChild(wrapper);
+
+requestAnimationFrame(() => {
+  const canvas = new Canvas(wrapper);
+  elements.forEach(v => new v(canvas));
+});

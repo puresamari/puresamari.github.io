@@ -11,6 +11,8 @@
           },
           {
             loader: 'postcss-loader'
-          },
+          }
         ]
-      },    ]  },  plugins};
+      },    ]  },  plugins,  resolve: {
+    extensions: ['.ts', '.js', '.json']
+  }};

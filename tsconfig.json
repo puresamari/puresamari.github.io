@@ -10,6 +10,7 @@
     "strict": true,
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
+    "rootDir": "src/",
     "outDir": "dist"
   },
   "include": [
