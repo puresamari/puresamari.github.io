@@ -7,8 +7,14 @@ export default class Blob extends Element {
   w = 0;
   h = 0;
 
-  private get Breathe(): number {
-    return Math.pow(Math.abs((new Date()).getMilliseconds() / 1000 * 2 - 1), 3);
+  mouseX = -1;
+  mouseY = -1;
+
+  start(): void {
+    this.canvas.Element.addEventListener('mousemove', ({ layerX, layerY }) => {
+      this.mouseX = layerX - this.x;
+      this.mouseY = layerY - this.y;
+    });
   }
 
   clear(): void {
@@ -19,21 +25,31 @@ export default class Blob extends Element {
       Math.ceil(this.h)
     );
   }
+
   update() {
 
     this.clear();
     
-    this.x = this.canvas.Width / 4 - this.canvas.Width * 0.1 * this.Breathe;
-    this.y = this.canvas.Height / 4 - this.canvas.Width * 0.1 * this.Breathe;
+    this.x = this.canvas.Width / 4;
+    this.y = this.canvas.Height / 4;
 
-    this.w = this.canvas.Width / 2 + this.canvas.Width * 0.2 * this.Breathe;
-    this.h = this.canvas.Height / 2 + this.canvas.Width * 0.2 * this.Breathe;
+    this.w = this.canvas.Width / 2;
+    this.h = this.canvas.Height / 2;
 
-    this.canvas.CTX.fillRect(
-      this.x,
-      this.y,
-      this.w,
-      this.h
-    );
+    const ctx = this.canvas.CTX;
+
+    ctx.beginPath();
+    ctx.moveTo(this.x, this.y);
+    if (this.mouseX > 0 && this.mouseX < this.w) {
+      ctx.lineTo(this.x + this.mouseX, this.y + this.h * 0.5);
+    }
+    ctx.lineTo(this.x, this.y + this.h);
+    ctx.lineTo(this.x + this.w, this.y + this.h);
+    if (this.mouseX > 0 && this.mouseX < this.w) {
+      ctx.lineTo(this.x + this.mouseX, this.y + this.h * 0.5);
+    }
+    ctx.lineTo(this.x + this.w, this.y);
+    ctx.lineTo(this.x, this.y);
+    ctx.fill();
   }
 }

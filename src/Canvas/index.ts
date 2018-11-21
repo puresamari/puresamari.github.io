@@ -2,6 +2,7 @@ export default class Canvas {
   private canvas: HTMLCanvasElement;
   private context: CanvasRenderingContext2D;
 
+  public get Element(): HTMLCanvasElement { return this.canvas; }
   public get CTX(): CanvasRenderingContext2D { return this.context; }
   public get Width(): number { return this.width; }
   public get Height(): number { return this.height; }
