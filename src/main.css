@@ -1,0 +1,10 @@
+/*@import-normalize;*/
+
+:root {
+  --colorBackground: #222;
+  --colorPrimary: #fa318b;
+}
+
+body {
+  background: var(--colorBackground);
+}
