@@ -17,18 +17,7 @@ export default class Blob extends Element {
     });
   }
 
-  clear(): void {
-    this.canvas.CTX.clearRect(
-      Math.floor(this.x),
-      Math.floor(this.y),
-      Math.ceil(this.w),
-      Math.ceil(this.h)
-    );
-  }
-
   update() {
-
-    this.clear();
     
     this.x = this.canvas.Width / 4;
     this.y = this.canvas.Height / 4;
@@ -38,15 +27,21 @@ export default class Blob extends Element {
 
     const ctx = this.canvas.CTX;
 
+    const mInFrame = (
+      (this.mouseX > 0 && this.mouseX < this.w) &&
+      (this.mouseY > 0 && this.mouseY < this.h)
+    );
+
+    ctx.fillStyle = 'red';
     ctx.beginPath();
     ctx.moveTo(this.x, this.y);
-    if (this.mouseX > 0 && this.mouseX < this.w) {
-      ctx.lineTo(this.x + this.mouseX, this.y + this.h * 0.5);
+    if (mInFrame) {
+      ctx.lineTo(this.x + this.mouseX, this.y + this.mouseY);
     }
     ctx.lineTo(this.x, this.y + this.h);
     ctx.lineTo(this.x + this.w, this.y + this.h);
-    if (this.mouseX > 0 && this.mouseX < this.w) {
-      ctx.lineTo(this.x + this.mouseX, this.y + this.h * 0.5);
+    if (mInFrame) {
+      ctx.lineTo(this.x + this.mouseX, this.y + this.mouseY);
     }
     ctx.lineTo(this.x + this.w, this.y);
     ctx.lineTo(this.x, this.y);

@@ -23,5 +23,11 @@ export default class Canvas {
     //this.canvas.className = root;
     this.parent.appendChild(this.canvas);
     this.context = <CanvasRenderingContext2D>this.canvas.getContext('2d');
+    this.clear();
+  }
+
+  clear(): void {
+    this.context.clearRect(0, 0, this.width, this.height);
+    requestAnimationFrame(() => this.clear());
   }
 }

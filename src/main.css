@@ -18,3 +18,7 @@ body {
   bottom: 0;
   right: 0;
 }
+
+#canvas-wrapper canvas {
+  cursor: none;
+}
